@@ -38,6 +38,14 @@ jobs:
         sudo apt install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev
         sudo apt install -y zlib1g-dev
 
+    - name: Install Android SDK and build tools
+      run: |
+        # Descargar el SDK de Android
+        wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip
+        unzip commandlinetools-linux-7583922_latest.zip -d $HOME/Android
+        yes | $HOME/Android/cmdline-tools/bin/sdkmanager --sdk_root=$HOME/Android --licenses
+        $HOME/Android/cmdline-tools/bin/sdkmanager --sdk_root=$HOME/Android "platform-tools" "platforms;android-30" "build-tools;30.0.3"
+
     - name: Build app with Buildozer
       run: |
         buildozer android debug

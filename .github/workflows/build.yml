@@ -26,6 +26,7 @@ jobs:
         sudo apt update
         sudo apt install -y build-essential git
         python -m pip install --upgrade pip
+        pip install cython  # Instalar Cython
         pip install buildozer
         pip install python-for-android
 

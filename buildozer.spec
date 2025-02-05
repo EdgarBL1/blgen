@@ -9,6 +9,8 @@ package.name = kivylauncher
 # (str) Nombre del directorio que contiene los archivos .py
 source.include_exts = py,png,jpg,kv,atlas
 
+source.dir = .  # <-- Esta línea es la que falta
+
 # (list) Dependencias de la aplicación
 # Aquí se incluyen las dependencias necesarias (por ejemplo, kivy y permisos)
 requirements = kivy, runpy, android
